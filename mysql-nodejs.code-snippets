@@ -1,0 +1,43 @@
+{
+	"Create MySQL connection": {
+		"scope": "javascript,typescript",
+		"prefix": "mcon",
+		"body": [
+			"require('dotenv').config();",
+			"const mysql = require('mysql');",
+			"",
+			"const connection = mysql.createConnection({",
+			"\tuser: process.env.MYSQL_USER,",
+			"\tpassword: process.env.MYSQL_PASSWORD,",
+			"\thost: process.env.MYSQL_HOST,",
+			"\tdatabase: process.env.MYSQL_DATABASE",
+			"});",
+			"",
+			"connection.connect((error) => {",
+			"\tif (error) {",
+			"\t\tthrow error;",
+			"\t}",
+			"\t",
+			"\tconsole.log('Connected to MySQL');",
+			"});",
+			"",
+			"module.exports = connection;",
+			"",
+		]
+	},
+	"Create MySQL query function": {
+		"scope": "javascript,typescript",
+		"prefix": "mquery",
+		"body": [
+			"let sql = `",
+			"\t$1",
+			"`;",
+			"",
+			"mysql.query(sql, $2, (error, results) => {",
+			"\tif (error) {",
+			"\t\treturn error;",
+			"\t}",
+			"});"
+		]
+	}
+}

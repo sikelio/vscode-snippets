@@ -1,0 +1,45 @@
+{
+	"Express Request": {
+		"scope": "javascript,typescript",
+		"prefix": "expreq",
+		"body": [
+			"(req, res) => {",
+			"\t$1",
+			"}"
+		]
+	},
+	"Express Middleware": {
+		"scope": "javascript,typescript",
+		"prefix": "expmid",
+		"body": [
+			"/**",
+			"* $1",
+			"* @param {object} req ExpressJS request data",
+			"* @param {function} res ExpressJS response functions",
+			"* @param {function} next Go to next middleware",
+			"* @returns {next}",
+			"*/",
+			"exports.$2 = (req, res, next) => {",
+			"\t$3",
+			"}"
+		]
+	},
+	"Express GET request": {
+		"scope": "javascript,typescript",
+		"prefix": "expget",
+		"body": [
+			"app.get('$1', (req, res) => {",
+			"\t$2",
+			"});"
+		]
+	},
+	"Express POST request": {
+		"scope": "javascript,typescript",
+		"prefix": "exppost",
+		"body": [
+			"app.post('$1', (req, res) => {",
+			"\t$2",
+			"});"
+		]
+	}
+}

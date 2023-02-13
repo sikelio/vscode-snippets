@@ -1,0 +1,16 @@
+{
+	"Create Javascript class": {
+		"scope": "javascript,typescript",
+		"prefix": "class",
+		"body": [
+			"class $1 {",
+			"\tinit() {",
+			"\t\t$2",
+			"\t}",
+			"}",
+			"",
+			"module.exports = $1;",
+			""
+		]
+	}
+}
